@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tdd-example.csharp", "tdd-example.csharp.csproj", "{600B2A8B-8AF4-4639-AA5A-EA363C13F2FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tdd-example.csharp", "tdd-example.csharp\tdd-example.csharp.csproj", "{600B2A8B-8AF4-4639-AA5A-EA363C13F2FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tdd-example.csharp.test", "tdd-example.csharp.test\tdd-example.csharp.test.csproj", "{FBBC7293-B04C-4DBC-86B8-6F6748CDEBAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{600B2A8B-8AF4-4639-AA5A-EA363C13F2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{600B2A8B-8AF4-4639-AA5A-EA363C13F2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{600B2A8B-8AF4-4639-AA5A-EA363C13F2FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBBC7293-B04C-4DBC-86B8-6F6748CDEBAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBBC7293-B04C-4DBC-86B8-6F6748CDEBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBBC7293-B04C-4DBC-86B8-6F6748CDEBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBBC7293-B04C-4DBC-86B8-6F6748CDEBAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
