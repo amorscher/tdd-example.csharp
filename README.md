@@ -17,6 +17,18 @@ Open a terminal and go to `tdd-example.csharp.test` and execute:
 
 > dotnet test
 
+### Execute Code Coverage
+
+> ./coverage.sh
+
+Create a Coverage report in `tdd-example.csharp.test/TestResults/coverage-report`
+
+> ./coverage-report.sh
+
+Open `tdd-example.csharp.test/TestResults/coverage-report/index.html` in preview browser to show the report
+
+
+
 
 ## The Example
 
@@ -37,18 +49,16 @@ There are several requirements provided which have to be implemented using the `
 
 1. The method can take up to two number separated by commas and will return their sum as a result. So the inputs can be: "","0", "1,2".
 
-2. For an empty string it will return 0.
+1. For an empty string it will return 0.
 
-3. Method will return their sum of numbers
+1. Allow the add method to handle an unknown number of arguments
 
-4. Allow the add method to handle an unknown number of arguments
-
-5. Allow the add method to handle newlines as separators, instead of comas
+1. Allow the add method to handle newlines as separators, instead of comas
 
     - “1,2\n3” should return “6”
     - “2,\n3” is invalid, but no need to clarify it with the program
 
-6. Allow the add method to handle different delimiters
+1. Allow the add method to handle different delimiters
 
     - To change the delimiter, the beginning of the input will contain a separate line that looks like this:
       > //[delimiter]\n[numbers]
@@ -57,20 +67,20 @@ There are several requirements provided which have to be implemented using the `
     - “//sep\n2sep5” should return “7”
     - “//|\n1|2,3” is invalid and should return an error (or throw an exception) with the message “‘|’ expected but ‘,’ found at position 3.”
 
-7. Calling add with negative numbers will return the message or throw an exception “Negative number(s) not allowed: <negativeNumbers>”
+1. Calling add with negative numbers will return the message or throw an exception “Negative number(s) not allowed: <negativeNumbers>”
 
     - “1,-2” is invalid and should return the message “Negative number(s) not allowed: -2”
     - “2,-4,-9” is invalid and should return the message “Negative number(s) not allowed: -4, -9”
 
-8. Numbers bigger than 100 should be ignored
+1. Numbers bigger than 100 should be ignored
 
 
-Additional requirements:
+**Additional requirements:**
 
-9. Delimiters can be of any length
+8. Delimiters can be of any length
     - Following format should be used: “//[delimiter]\n”. Example: “//[—]\n1—2—3” should return 6
 
-10. Allow multiple delimiters
+8. Allow multiple delimiters
     - Following format should be used: “//[delim1][delim2]\n”. Example “//[-][%]\n1-2%3” should return 6.
 
-11. Make sure you can also handle multiple delimiters with length longer than one char
+8. Make sure you can also handle multiple delimiters with length longer than one char
