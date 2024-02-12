@@ -1,5 +1,6 @@
 
 using System;
+using System.Text.RegularExpressions;
 /*
 * A simple string calculator
 */
@@ -28,7 +29,7 @@ public class StringCalculator
             return new List<int>(1){0};
         }
         
-        var numbersArray = input.Split(",");
+        var numbersArray = Regex.Split(input,@",|\n");
         
         List<int> numberList = new();
         foreach (var item in numbersArray)

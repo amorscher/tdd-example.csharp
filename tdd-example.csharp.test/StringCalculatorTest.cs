@@ -35,7 +35,6 @@ public class StringCalculatorTest
 
     }
 
-
     [Fact]
     public void TestThatNArgumentsAreTakenAsString()
     {
@@ -104,6 +103,19 @@ public class StringCalculatorTest
 
         //THEN
         Assert.Equal(0, result);
+    }
+
+    [Fact]
+    public void TestThatNewlineCanBeUsedAsDelimiter()
+    {
+        //GIVEN
+        var itemUnderTest = new StringCalculator();
+
+        //WHEN
+        var result = itemUnderTest.Add("1\n2\n3");
+
+        //THEN
+        Assert.Equal(1+2+3, result);
     }
 
 }
