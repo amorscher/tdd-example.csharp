@@ -1,5 +1,7 @@
 {
     "recommendations": [
-        "ms-dotnettools.csdevkit"
+        "ms-dotnettools.csdevkit",
+        "ryanluker.vscode-coverage-gutters",
+		"ritwickdey.LiveServer"
     ]
 }

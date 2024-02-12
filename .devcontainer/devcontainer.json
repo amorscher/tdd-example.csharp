@@ -15,7 +15,9 @@
 			"settings": {},
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
-				"ms-dotnettools.csdevkit"
+				"ms-dotnettools.csdevkit",
+				"ryanluker.vscode-coverage-gutters",
+				"ritwickdey.LiveServer"
 			]
 		}
 	},
@@ -30,13 +32,13 @@
 		"5001": {
 			"protocol": "https"
 		}
-	}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [5000, 5001],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "dotnet restore",
+	"postCreateCommand": "dotnet restore && dotnet tool install -g dotnet-coverage && dotnet tool install -g dotnet-reportgenerator-globaltool && dotnet tool install -g coverlet.console"
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
