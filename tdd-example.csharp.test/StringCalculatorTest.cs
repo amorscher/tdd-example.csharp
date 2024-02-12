@@ -80,7 +80,7 @@ public class StringCalculatorTest
     }
 
 
-        [Fact]
+    [Fact]
     public void TestThatOneNumberAsInputIsValid()
     {
         //GIVEN
@@ -91,6 +91,19 @@ public class StringCalculatorTest
 
         //THEN
         Assert.Equal(1, result);
+    }
+
+    [Fact]
+    public void TestThatEmptyStringReturns0()
+    {
+        //GIVEN
+        var itemUnderTest = new StringCalculator();
+
+        //WHEN
+        var result = itemUnderTest.Add("");
+
+        //THEN
+        Assert.Equal(0, result);
     }
 
 }

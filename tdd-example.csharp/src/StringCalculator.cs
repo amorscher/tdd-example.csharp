@@ -24,6 +24,10 @@ public class StringCalculator
 
     private List<int> ParseInput(string input)
     {
+        if(input == ""){
+            return new List<int>(1){0};
+        }
+        
         var numbersArray = input.Split(",");
         if (numbersArray.Length > 2)
         {
