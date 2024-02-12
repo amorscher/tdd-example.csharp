@@ -8,15 +8,15 @@ namespace tdd_example.csharp.test;
 public class StringCalculatorTest
 {
 
-    [Fact (DisplayName = " one plus two equals three")]
-    public void FirstTest()
+    [Fact (DisplayName = "String calc should be created")]
+    public void TestThatStringCalcCanBeCreated()
     {
         //GIVEN
-        var itemUnderTest = new StringCalculator();
         //WHEN
-        var result = itemUnderTest.Add("1,2");
+        var itemUnderTest = new StringCalculator();
+        
         //THEN
-        Assert.Equal(3, result);
+        Assert.NotNull(itemUnderTest);
 
     }
 

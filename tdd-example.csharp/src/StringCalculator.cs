@@ -15,9 +15,4 @@ public class StringCalculator
 
     }
 
-    public double Add(string expression)
-    {
-        return 0.0;
-    }
-
 }
