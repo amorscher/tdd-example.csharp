@@ -29,11 +29,7 @@ public class StringCalculator
         }
         
         var numbersArray = input.Split(",");
-        if (numbersArray.Length > 2)
-        {
-            throw new ArgumentException("Not more than 2 numbers are supported");
-        }
-
+        
         List<int> numberList = new();
         foreach (var item in numbersArray)
         {

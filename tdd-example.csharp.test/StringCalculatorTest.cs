@@ -1,6 +1,7 @@
 
 
 
+using Microsoft.AspNetCore.Components.Forms;
 using Xunit.Sdk;
 
 namespace tdd_example.csharp.test;
@@ -34,20 +35,19 @@ public class StringCalculatorTest
 
     }
 
+
     [Fact]
-    public void TestThatMoreThan2ArgumentsAreInvalid()
+    public void TestThatNArgumentsAreTakenAsString()
     {
         //GIVEN
         var itemUnderTest = new StringCalculator();
-
         //WHEN
-        Action action = () => itemUnderTest.Add("1,2,3");
+        var result =itemUnderTest.Add("1,2,3,4,5");
 
         //THEN
-        Assert.Throws<ArgumentException>(action);
+        Assert.Equal(1+2+3+4+5,result);
 
     }
-
 
     [Fact]
     public void TestThatArgumentNotANumberIsInvalid()
