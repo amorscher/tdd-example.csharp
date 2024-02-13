@@ -103,12 +103,15 @@ public class StringCalculator
             try
             {
                 var number = Int32.Parse(item);
-                
-                if(number < 0){
+
+                if (number < 0)
+                {
                     negativeNumbers.Add(number);
                 }
-
-                numberList.Add(number);
+                if (number <= 100)
+                {
+                    numberList.Add(number);
+                }
             }
             catch (FormatException e)
             {
@@ -116,8 +119,9 @@ public class StringCalculator
             }
         }
 
-        if(negativeNumbers.Count > 0){
-            throw new ArgumentException($"Negative number(s) not allowed: {String.Join(",",negativeNumbers.ToArray())}");
+        if (negativeNumbers.Count > 0)
+        {
+            throw new ArgumentException($"Negative number(s) not allowed: {String.Join(",", negativeNumbers.ToArray())}");
         }
 
         return numberList;

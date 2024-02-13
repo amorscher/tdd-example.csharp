@@ -174,11 +174,11 @@ public class StringCalculatorTest
         //THEN
         ArgumentException exception = Assert.Throws<ArgumentException>(action);
         Assert.Equal("'|' expected but ',' found at position 3.", exception.Message);
-        
+
 
     }
 
-        [Fact]
+    [Fact]
     public void TestThatUsingWrongMultiDelimiterThrowsException()
     {
         //GIVEN
@@ -190,11 +190,11 @@ public class StringCalculatorTest
         //THEN
         ArgumentException exception = Assert.Throws<ArgumentException>(action);
         Assert.Equal("'Sep' expected but ',' found at position 5.", exception.Message);
-        
+
 
     }
 
-   [Fact]
+    [Fact]
     public void TestThatSingleNegativeNumberThrowsException()
     {
         //GIVEN
@@ -206,11 +206,11 @@ public class StringCalculatorTest
         //THEN
         ArgumentException exception = Assert.Throws<ArgumentException>(action);
         Assert.Equal("Negative number(s) not allowed: -2", exception.Message);
-        
+
 
     }
 
-       [Fact]
+    [Fact]
     public void TestThatMultipleNegativeNumberThrowsException()
     {
         //GIVEN
@@ -222,7 +222,37 @@ public class StringCalculatorTest
         //THEN
         ArgumentException exception = Assert.Throws<ArgumentException>(action);
         Assert.Equal("Negative number(s) not allowed: -4,-9", exception.Message);
-        
+
+
+    }
+
+    [Fact]
+    public void TestThatOneNumberBiggerThan100IsIgnored()
+    {
+        //GIVEN
+        var itemUnderTest = new StringCalculator();
+
+        //WHEN
+        var result = itemUnderTest.Add("1,101,2,3");
+
+        //THEN
+        Assert.Equal(1 + 2 + 3, result);
+
+
+    }
+
+    [Fact]
+    public void TestThatMultipleNumberBiggerThan100AreIgnored()
+    {
+        //GIVEN
+        var itemUnderTest = new StringCalculator();
+
+        //WHEN
+        var result = itemUnderTest.Add("1,100,101,102,3000,2,3");
+
+        //THEN
+        Assert.Equal(1 + 100+ 2 + 3, result);
+
 
     }
 
