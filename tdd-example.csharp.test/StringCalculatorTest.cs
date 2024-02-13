@@ -194,4 +194,36 @@ public class StringCalculatorTest
 
     }
 
+   [Fact]
+    public void TestThatSingleNegativeNumberThrowsException()
+    {
+        //GIVEN
+        var itemUnderTest = new StringCalculator();
+
+        //WHEN
+        void action() => itemUnderTest.Add("1,-2");
+
+        //THEN
+        ArgumentException exception = Assert.Throws<ArgumentException>(action);
+        Assert.Equal("Negative number(s) not allowed: -2", exception.Message);
+        
+
+    }
+
+       [Fact]
+    public void TestThatMultipleNegativeNumberThrowsException()
+    {
+        //GIVEN
+        var itemUnderTest = new StringCalculator();
+
+        //WHEN
+        void action() => itemUnderTest.Add("1,-4,-9");
+
+        //THEN
+        ArgumentException exception = Assert.Throws<ArgumentException>(action);
+        Assert.Equal("Negative number(s) not allowed: -4,-9", exception.Message);
+        
+
+    }
+
 }

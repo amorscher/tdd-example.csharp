@@ -97,16 +97,27 @@ public class StringCalculator
     private List<int> ParseNumbers(string[] numbersArray)
     {
         List<int> numberList = new();
+        List<int> negativeNumbers = new();
         foreach (var item in numbersArray)
         {
             try
             {
-                numberList.Add(Int32.Parse(item));
+                var number = Int32.Parse(item);
+                
+                if(number < 0){
+                    negativeNumbers.Add(number);
+                }
+
+                numberList.Add(number);
             }
             catch (FormatException e)
             {
                 throw new ArgumentException("Argument must be a number", e);
             }
+        }
+
+        if(negativeNumbers.Count > 0){
+            throw new ArgumentException($"Negative number(s) not allowed: {String.Join(",",negativeNumbers.ToArray())}");
         }
 
         return numberList;
